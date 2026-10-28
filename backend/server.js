@@ -1,13 +1,13 @@
-import OpenAI from 'openai';
-import 'dotenv/config';
+import express from 'express';
+import "dotenv/config";
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // This is the default and can be omitted
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
-const response = await client.responses.create({
-  model: 'gpt-5.5',
-  input: 'Joke related to computer science',
-});
-
-console.log(response.output_text);
+fetch("/chat/completions");
