@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+import Sidebar from "./Sidebar.jsx";
+import ChatWindow from "./ChatWindow.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-    </>
+    <div className='main'>
+      <Sidebar></Sidebar>
+      <ChatWindow></ChatWindow>
+    </div>
   );
 }
 
